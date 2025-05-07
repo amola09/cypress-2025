@@ -1,7 +1,7 @@
 // page visit -->login --> actions1 --> action2 -->action3 -->logout
 //-----------------------------
 // before() : executed once first(before stat of describe block)
-// beforeEach() :before each it bolck
+// beforeEach() :before each it bolck   
 // after() :at end and once
 // afterEach() : after each it bolck
 
