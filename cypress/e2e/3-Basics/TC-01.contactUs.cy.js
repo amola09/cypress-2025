@@ -1,6 +1,6 @@
 ///<reference types = "cypress" />
-
-describe("TC-01: Verify ContactUs Page from Webdriver university:",function(){
+// Verify ContactUs Page from Webdriveruniversity
+describe("TC-01: Verify ContactUs Page from Webdriveruniversity:",function(){
     it("TC001-Verify ContactUS page for valid data:",function(){
 
         //AAA - Arrangement,Action,Assertion
@@ -10,7 +10,7 @@ describe("TC-01: Verify ContactUs Page from Webdriver university:",function(){
         cy.get('[name="first_name"]').type('Amol')
         cy.get('[name="last_name"]').type('Pawar')
         cy.get('[name="email"]').type('AmolPawar@gmail.com')
-        cy.get('[name="message"]').type('I lear Cypress')
+        cy.get('[name="message"]').type('I learn Cypress')
         cy.get('[type="submit"]').click()
         // Assertion
         cy.get('h1').should('have.text','Thank You for your Message!')
