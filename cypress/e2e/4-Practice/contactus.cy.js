@@ -134,7 +134,7 @@ describe.skip("TC04: Verfiy login functionality on PARABANK:", function () {
   });
 });
 
-describe.skip('TC05: Verify login functionality on herokuapp:',function(){
+describe.skip("TC05: Verify login functionality on herokuapp:",function(){
   it('TC001: Verify login with valid data:',function(){
     
     cy.visit('https://the-internet.herokuapp.com/login')
@@ -164,7 +164,7 @@ describe.skip('TC05: Verify login functionality on herokuapp:',function(){
   })
 })
 
-describe('TC06: Verify login functionality automation excercise:',function(){
+describe("TC06: Verify login functionality automation excercise:",function(){
   it('TC001: Verify login functionality with valid data',function(){
     cy.visit('https://automationexercise.com/')
 

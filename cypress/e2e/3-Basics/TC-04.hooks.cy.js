@@ -9,7 +9,7 @@
 ///<reference types ='cypress'/>
 
 
-describe("TC-04: cypress with hooks:",function(){
+describe("TC04: cypress with hooks:",function(){
 
     before(function(){
         cy.log('I am before executes once')

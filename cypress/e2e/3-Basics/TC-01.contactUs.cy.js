@@ -1,7 +1,7 @@
 ///<reference types = "cypress" />
 // Verify ContactUs Page from Webdriveruniversity
 describe("TC-01: Verify ContactUs Page from Webdriveruniversity:",function(){
-    it("TC001-Verify ContactUS page for valid data:",function(){
+    it("TC001: Verify ContactUS page for valid data:",function(){
 
         //AAA - Arrangement,Action,Assertion
         // Arrangement

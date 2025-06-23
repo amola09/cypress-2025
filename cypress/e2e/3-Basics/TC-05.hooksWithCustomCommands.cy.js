@@ -1,7 +1,7 @@
 ///<reference types = "cypress" />
 
 
-describe('TC05- Verify hooks with custom command on orangeHRM Login:',function(){
+describe('TC05: Verify hooks with custom command on orangeHRM Login:',function(){
     
     beforeEach(function(){
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')

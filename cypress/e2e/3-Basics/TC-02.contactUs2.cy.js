@@ -1,7 +1,7 @@
 ///<reference types = "cypress" />
 
 
-describe("TC02- Verify Contact Us page from webdriver University for valid and invalid data:",function(){
+describe("TC02: Verify Contact Us page from webdriver University for valid and invalid data:",function(){
 
     it("TC001: Verify contactus page with valid data:",function(){
         //AAA
@@ -30,7 +30,7 @@ describe("TC02- Verify Contact Us page from webdriver University for valid and i
         cy.get('[name="message"]').type("i Learn Cypress")
         cy.get('[type="submit"]').click()
 
-    cy.contains('Error: Invalid email address')
+    cy.contains('Error: Invalid email address').should('be.visible')
   })
 
   it("TC003: Verify Contact Us page with Invalid data-2:", function(){
@@ -42,7 +42,7 @@ describe("TC02- Verify Contact Us page from webdriver University for valid and i
     cy.get('[name="email"]').type('AmolPawar@gmail.com')
     cy.get('[type="submit"]').click()
 
-    cy.contains('Error: all fields are required')
+    cy.contains('Error: all fields are required').should('be.visible')
     
   })
   it("TC004: Verify Contact Us page with Reset option:",function(){

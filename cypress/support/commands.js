@@ -32,3 +32,29 @@ Cypress.Commands.add('OHRMlogin', (un, ps) => {
     cy.get('[type="submit"]').click()
 
 })
+
+Cypress.Commands.add('iframe', (uqselector) => { 
+    return cy.get(uqselector).its('0.contentDocument.body').then(cy.wrap)
+})
+Cypress.Commands.add('getiFrameBody', (frameId) => {
+    return cy.get(frameId).its('0.contentDocument.body').then(cy.wrap)
+})
+//23,cySession
+Cypress.Commands.add('loginBySession', (uid, pw) => {
+    cy.session([uid, pw], () => {
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        //cy.visit('/web/index.php/auth/login') //baseurl set
+        cy.get('[name="username"]').type(uid)
+        cy.get('[name="password"]').type(pw)
+        cy.get('button[type="submit"]').click()
+    })
+
+})
+
+Cypress.Commands.add('parseXlsx', (inputFile) => {
+return cy.task('parseXlsx' , { filePath: inputFile})
+})
+// Cypress.Commands.add('parseXlsx', (inputFile) => {  //for excel data import
+//              return cy.task('parseXlsx' , { filePath: inputFile})
+//         })
+   

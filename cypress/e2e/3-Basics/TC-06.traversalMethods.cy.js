@@ -30,22 +30,22 @@ describe("TC06: Verify traverse methods on Webdriver unicersity:",function(){
         cy.get('#coffee').nextUntil('#espresso').should('have.length', 2)
     })
 
-    it('TC003:find method:',function(){
+    it('TC003: find method:',function(){
         cy.get('#form-textfield').find('[name="firstname"]').type('Amol')
         cy.get('#form-textfield').find('[name="lastname"]').type('deshmukh')
         cy.get('#form-textfield').find('textarea').type('hello')
     })
-    it('TC004:contains method:',function(){
+    it('TC004: contains method:',function(){
         cy.get('.traversal-buttons').contains('Link').click()
     })
 
-    it('TC005:contains-2 method:',function(){
+    it('TC005: contains-2 method:',function(){
         cy.visit('https://www.webdriveruniversity.com/')
         cy.contains('CONTACT US').click()
         //cy.get('#contact-us > div >div.section-title > h1').click()
     })
 
-    it('TC006:Parent,Parents,parentsUntill Method:',function(){
+    it('TC006: Parent,Parents,parentsUntill Method:',function(){
         cy.get('#espresso').parent().should('have.attr', 'class', 'traversal-drinks-list')
 
         cy.get('#espresso').parents().should('have.length', 6)
@@ -53,7 +53,7 @@ describe("TC06: Verify traverse methods on Webdriver unicersity:",function(){
         cy.get('#espresso').parentsUntil('body > div.container').should('have.length', 3)
     })
 
-    it('TC006:children,filter,not Method:',function(){
+    it('TC007: children,filter,not Method:',function(){
         cy.get('.traversal-button-states').children().should('have.length',4)
         cy.get('.traversal-button-states').children().filter('.disabled').should('have.text','Warning')
 
@@ -61,13 +61,10 @@ describe("TC06: Verify traverse methods on Webdriver unicersity:",function(){
 
     })
 
-    it('TC006:Closest Method:',function(){
+    it('TC008: Closest Method:',function(){
         cy.get('.disabled').closest('div').should('have.attr', 'class', 'traversal-button-states')
         cy.get('[aria-label="Page navigation example"]').closest('nav').should('have.attr', 'aria-label', 'Page navigation example')
         cy.get('.traversal-button-states').closest('div').should('have.attr', 'class', 'traversal-button-states')
     })
-
-
-
 
 })
