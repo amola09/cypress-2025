@@ -16,6 +16,6 @@ git branch -M main
 git remote add origin https://github.com/amola09/CypressNov24.git
 git push -u origin main
 …or push an existing repository from the command line
-g
+
 git branch -M main
 git push -u origin main -->error: failed to push some refs to 'https://github.com/amola09/cypress-2025.git' -->git pull origin main --allow-unrelated-histories
