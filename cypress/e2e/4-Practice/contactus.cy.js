@@ -51,10 +51,8 @@ describe.skip("TT01:Verify contact us page from webdriveruniversity:", function 
     cy.get('[name="message"]').should("have.text", "");
   });
 });
-
-// verify contact us page from webdriveruniversity
-
-describe.skip("TT02:Verify login page from Saucedemo:", function () {
+// verify contact us page from saucedemo
+describe.skip("TC02:Verify login page from Saucedemo:", function () {
   it("TC001: Verify login page for valid data:", function () {
     cy.visit("https://www.saucedemo.com/");
 
@@ -79,7 +77,7 @@ describe.skip("TT02:Verify login page from Saucedemo:", function () {
     );
   });
 });
-
+// verify contact us page from orangeHRM
 describe.skip("TC03: Verify login functionality on OrangeHRM:", function () {
   it("TC001: Verify Login functionality for valid data:", function () {
     cy.visit(
@@ -107,7 +105,7 @@ describe.skip("TC03: Verify login functionality on OrangeHRM:", function () {
     );
   });
 });
-
+// verify contact us page from Parabank
 describe.skip("TC04: Verfiy login functionality on PARABANK:", function () {
 
   it("TC001: Verify login funcitionality with valid data:", function () {
@@ -133,7 +131,7 @@ describe.skip("TC04: Verfiy login functionality on PARABANK:", function () {
     cy.url().should("include", "parabank/login.htm");
   });
 });
-
+// verify contact us page from heroku
 describe.skip("TC05: Verify login functionality on herokuapp:",function(){
   it('TC001: Verify login with valid data:',function(){
     
@@ -163,8 +161,8 @@ describe.skip("TC05: Verify login functionality on herokuapp:",function(){
     cy.url().should('include','/secure')
   })
 })
-
-describe("TC06: Verify login functionality automation excercise:",function(){
+// verify contact us page from automation excersize
+describe.skip("TC06: Verify login functionality automation excercise:",function(){
   it('TC001: Verify login functionality with valid data',function(){
     cy.visit('https://automationexercise.com/')
 
@@ -188,4 +186,120 @@ describe("TC06: Verify login functionality automation excercise:",function(){
     cy.url().should('include','https://automationexercise.com/')
   })
 })
+// verify contact us page from ultimateQA
+describe.skip("TC07: Verify login functionality in UltimateQA:",function(){
+  it("TC001: Verify login page with valid data:",function(){
+    cy.visit('https://courses.ultimateqa.com/')
+
+    cy.get('[href="/users/sign_in"]').click()
+    cy.get('[id="user[email]"]').type('AmolPawar@gmail.com',{ delay: 100 })
+    cy.get('[id="user[password]"]').type('amola123',{ delay: 100 })
+    cy.get('[type="submit" ]').click()
+
+    cy.get('[class="message-text"]').should('have.text','Signed in successfully.')
+  })
+  it("TC002: Verify login page with invalid data:",function(){
+    cy.visit('https://courses.ultimateqa.com/')
+
+    cy.get('[href="/users/sign_in"]').click()
+    cy.get('[id="user[email]"]').type('AmolPawar@gmail.com',{ delay: 100 })
+    cy.get('[id="user[password]"]').type('amola12',{ delay: 100 })
+    cy.get('[type="submit" ]').click()
+
+    cy.get('[class="form-error__list-item"]').should('include.text','Invalid email or password.')
+  })
+})
+describe.skip('TC08: Verify login functionality on demoblaze',function(){
+  it('TC001: Verify login with valid credentials',function(){
+    cy.visit(' https://www.demoblaze.com/index.html')
+
+    cy.get('[id="login2"]').click()
+    cy.get('[id="loginusername"]').type('Amola')
+    cy.get('[id="loginpassword"]').type('amola123')
+    cy.get('[onclick="logIn()"]').click()
+
+    cy.get('[id="nameofuser"]').should('have.text','Welcome Amola')
+  })
+  it('TC001: Verify login with invalid credentials',function(){
+     
+    cy.visit(' https://www.demoblaze.com/index.html')
+    
+    cy.get('[id="login2"]').click()
+    cy.get('[id="loginusername"]').type('Amola')
+    cy.get('[id="loginpassword"]').type('amola12')
+    cy.get('[onclick="logIn()"]').click()
+
+  
+  })
+})
+
+// describe.skip('TC09: Verify login functionality on salesforce',function(){
+//   it('TC001: Verify login with valid credentials',function(){
+//     cy.visit('https://test.salesforce.com/')
+
+    
+//     cy.get('[id="username"]').type('Amola')
+//     cy.get('[id="password"]').type('amola123')
+//     cy.get('[id="Login"]').click()
+
+//     cy.get('[id="nameofuser"]').should('include.text',"Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.")
+//   })
+  
+  // })
+
+describe.skip('TC09: Verify login functionality on actiTime',function(){
+  it('TC001: Verify login with valid credentials',function(){
+    cy.visit('https://online.actitime.com/littleimpact/login.do')
+
+    
+    cy.get('[id="username"]').type('Amola91193@gmail.com')
+    cy.get('[name="pwd"]').type('amola@123')
+    cy.contains("Login").click()
+
+    cy.get('h3').should('include.text',"Enter Time-Track for")
+    cy.get('[class="userProfileLink username "] ').should('include.text','Aa')
+  })
+
+  it('TC002: Verify login with invalid credentials',function(){
+    cy.visit('https://online.actitime.com/littleimpact/login.do')
+
+    
+    cy.get('[id="username"]').type('Amola91193@gmail.com')
+    cy.get('[name="pwd"]').type('amola@12')
+    cy.contains("Login").click()
+
+   
+    cy.get('[class="errormsg"]').should('have.text','Username or Password is invalid. Please try again.')
+  })
+
+})
+
+describe('TC10: Verify login functionality on ALTORO MUTUAL:',function(){
+  it('TC001: Verify login with valid credentials',function(){
+    cy.visit('https://demo.testfire.net/login.jsp')
+
+    
+    cy.get('[id="uid"]').type('admin')
+    cy.get('[id="passw"]').type('admin')
+    cy.get('[value="Login"]').click()
+
+    cy.get('h2').should('include.text',"Congratulations!")
+    cy.get('h1').should('include.text','Hello Admin User')
+  })
+
+  it('TC002: Verify login with invalid credentials',function(){
+    cy.visit('https://demo.testfire.net/login.jsp')
+
+    
+    cy.get('[id="uid"]').type('admin')
+    cy.get('[id="passw"]').type('admn')
+    cy.get('[value="Login"]').click()
+ 
+    cy.get('[id="_ctl0__ctl0_Content_Main_message"]').should('include.text',"Login Failed: We're sorry, but this username or password was not found in our system. Please try again.")  
+    cy.contains('[id="_ctl0__ctl0_Content_Main_message"]',"Login Failed: We're sorry, but this username or password was not found in our system. Please try again.")
+  })
+
+})
+
+
 

@@ -273,7 +273,7 @@ context('Actions', () => {
 
     // Here, we invoke jQuery's val() method to set
     // the value and trigger the 'change' event
-    cy.get('.trigger-input-range')
+    cy.get('.trigger-input-range') 
       .invoke('val', 25)
     cy.get('.trigger-input-range')
       .trigger('change')

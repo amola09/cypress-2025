@@ -8,6 +8,8 @@ describe("TC01: Verify File upload functionality in cypress:",function(){
 
     cy.get('[class="css-zpjtsm e12cce780"]').selectFile('cypress/e2e/5-FIleUpload/sampleFile.jpeg')
 
+    cy.get('[class="lw_redirect_dialog"]',{ timeout: 2000 })
+
     
     })
 })

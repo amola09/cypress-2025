@@ -1,5 +1,5 @@
 {
-  "name": "Cypress-2025",
+  "name": "cypress-2025",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^14.3.1",
+    "cypress": "^14.5.3",
     "node-xlsx": "^0.24.0"
-  }
+  },
+  "dependencies": {
+    "npx": "^10.2.2",
+    "xml2js": "^0.6.2",
+    "yarn": "^1.22.22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amola09/cypress-2025.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amola09/cypress-2025/issues"
+  },
+  "homepage": "https://github.com/amola09/cypress-2025#readme"
 }

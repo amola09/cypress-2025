@@ -1,6 +1,6 @@
 ///<reference types = "cypress" />
 
-describe('TC03- verify login functionality of Orange HRM with custom commands:',function(){
+describe('TC03: Verify login functionality of Orange HRM with custom commands:',function(){
     it("TC01: Verify login functionality with valid data:",function(){
 
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
